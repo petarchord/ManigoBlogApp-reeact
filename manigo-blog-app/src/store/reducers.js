@@ -8,7 +8,7 @@ const initialArticle = {
 
 const articleReducer = (state = [], action) => {
   switch (action.type) {
-    case "FETCH_ARTICLE":
+    case "FETCH_ARTICLES":
       return action.payload;
     default:
       return state;
