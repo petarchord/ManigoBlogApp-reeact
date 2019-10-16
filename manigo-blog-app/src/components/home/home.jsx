@@ -3,6 +3,7 @@ import Article from "../article/article";
 import Navbar from "./navbar";
 import { utility } from "../../helpers/utility";
 import { connect } from "react-redux";
+import * as actionCreator from "../../store/actions";
 import axios from "axios";
 
 class Home extends Component {
@@ -29,9 +30,19 @@ class Home extends Component {
     return (
       <div className="home">
         <Navbar />
+        {this.props.articles.map((article, index) => (
+          <Article
+            key={index}
+            title={article.title}
+            content={article.content}
+            username={article.username}
+            likes={article.likes}
+            comments={article.comments}
+          />
+        ))}
+        {/* <Article />
         <Article />
-        <Article />
-        <Article />
+        <Article /> */}
       </div>
     );
   }
@@ -45,7 +56,7 @@ const mapStoreToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchArticles: data => dispatch({ type: "FETCH_ARTICLES", payload: data })
+    fetchArticles: data => dispatch(actionCreator.fetchArticles(data))
   };
 };
 

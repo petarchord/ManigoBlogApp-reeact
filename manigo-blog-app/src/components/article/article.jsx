@@ -7,18 +7,16 @@ class Article extends Component {
       <div className="article_holder">
         <div class="card" style={{ width: 18 + "em" }}>
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
+            <h5 class="card-title">{this.props.title}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{this.props.username}</h6>
+            <p class="card-text">{this.props.content}</p>
             <a href="#" class="card-link">
               Like
             </a>
             <a href="#" class="card-link">
               Comment
             </a>
-            <p className="article_like">5 likes</p>
+            <p className="article_like">{this.props.likes}likes</p>
           </div>
         </div>
       </div>

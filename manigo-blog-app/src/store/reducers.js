@@ -8,7 +8,7 @@ const initialArticle = {
 
 const articleReducer = (state = [], action) => {
   switch (action.type) {
-    case "FETCH_ARTICLES":
+    case "FETCH_ARTICLES_ASYNC":
       return action.payload;
     default:
       return state;
